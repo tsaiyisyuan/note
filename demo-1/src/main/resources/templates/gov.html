@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<script src="js/jquery-3.6.0.min.js"></script>
+	<script>
+	$(function(){
+		$('#checkResult').click(function(){
+			let objectData = { 
+				number1: $('#number1').val(),
+				number2: $('#number2').val(),
+				choose:$("[name='choose']:checked").val()					    				
+    		}      			
+			$.ajax({
+    			url: "/getResult",                        // url位置
+    			type: "post",
+				dataType:"json",
+				contentType:"application/json",
+    			data: JSON.stringify(objectData), // 輸入的資料
+    			error: function (xhr) {
+					console.log("error",xhr)
+				},      // 錯誤後執行的函數
+    			success: function (response) {
+					$("#result").append(Object.values(response))
+				}// 成功後要執行的函數
+			});			
+		})
+	})
+		
+	</script>
+</head>
+
+<body>
+	<div>
+	<div>數字1:<input type="number" id="number1"></div>
+	<div>數字2:<input type="number" id="number2"></div>
+	<div>
+		<input type="radio" name="choose" value="add">加法
+		<input type="radio" name="choose" value="minus">減法
+		<input type="radio" name="choose" value="times">乘法
+		<input type="radio" name="choose" value="divided">除法	
+	</div>
+	<div><button id="checkResult">結果:</button><span id="result"></span></div>
+	
+	</div>
+    
+</body>
+
+</html>
