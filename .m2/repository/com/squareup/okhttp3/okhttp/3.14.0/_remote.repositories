@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu Jun 09 23:13:35 CST 2022
+okhttp-3.14.0-sources.jar>central=
+okhttp-3.14.0.pom>central=
+okhttp-3.14.0.jar>central=
