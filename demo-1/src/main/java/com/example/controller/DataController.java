@@ -17,6 +17,9 @@ import com.example.service.DataService;
 
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * DataController
+ * */
 @Slf4j
 @RestController
 @RequestMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
@@ -24,7 +27,10 @@ public class DataController {
 
 	@Autowired
 	private DataService dataService;
-
+	
+	/**
+	 * @return 回傳"新竹市公共圖書館"JAVA物件
+	 * */
 	@RequestMapping(path = "/getResult", method = RequestMethod.POST)
 	public List<Todo> getResult() {
 		
@@ -36,7 +42,10 @@ public class DataController {
 		}*/
 		return dataService.findAll(); 		
 	}
-
+	
+	/**
+	 * @param id 要刪除的ID
+	 * */
 	@RequestMapping(path = "/deleteResult", method = RequestMethod.POST)
 	public void deleteResult(@RequestBody String id) {
 		log.info("deleteResult id:{}",id);

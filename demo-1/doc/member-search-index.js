@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"com.example.controller","c":"DataController","l":"DataController()","u":"%3Cinit%3E()"},{"p":"com.example.controller","c":"DataController","l":"deleteResult(String)","u":"deleteResult(java.lang.String)"},{"p":"com.example.controller","c":"DataController","l":"getResult()"}];updateSearchResults();

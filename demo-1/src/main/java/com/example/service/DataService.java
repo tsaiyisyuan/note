@@ -22,6 +22,9 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Service
+/**
+ * test comment
+ * */
 public class DataService {
 	
 	@Autowired
@@ -70,10 +73,18 @@ public class DataService {
 		todoRepository.saveAll(todoObjs);
 	}
 	
+	/**
+	 * 
+	 * @return 尋找全部資料
+	 * */	
 	public List<Todo> findAll() {
 		return todoRepository.findAll();
 	}
 	
+	/**
+	 * 
+	 * 刪除資料
+	 * */	
 	public void deleteResult(String id) {
 		todoRepository.deleteById(Long.valueOf(id));
 	}
